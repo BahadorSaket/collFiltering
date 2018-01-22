@@ -70,7 +70,9 @@
             },
 
             methods : {
-                loadVis: function() {
+
+                // creates a div for each model
+                loadVis: function() { 
                    for(var i=0;i<(comp.dataPredicStore).length;i++)
                    {
                       $('<div/>', {
@@ -86,9 +88,9 @@
                         height: 30,
                       }).appendTo('.models_'+i);
 
-                      this.createHistogramPrediction(i);
+                      this.createHistogramPrediction(i); // creates the vis on the top
 
-                      this.createHistogramDelta(i);
+                      this.createHistogramDelta(i); // creates the vis at the bottom
                    }
                 },
 
@@ -168,7 +170,7 @@
 
                 createHistogramPrediction: function(modelID){            
                     var values = comp.dataPredicStore[modelID]
-                    this.visualizeHistogram(values, modelID,"Frequency of items per rating","pred");
+                    this.visualizeHistogram(values, modelID,"Frequency of items per predicted rating","pred");
                 },
 
                 createHistogramDelta: function(modelID){
