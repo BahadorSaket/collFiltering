@@ -37,8 +37,8 @@
                     fileName: JSON.stringify(),
                     index : JSON.stringify()
                   }).done(function(data) {
-                     comp.dataPredicStore = JSON.parse(data.predictData); 
-                     comp.dataDeltaStore = JSON.parse(data.deltaData);
+                     comp.dataPredicStore = JSON.parse(data.predictData); // get the data fro the first chart
+                     comp.dataDeltaStore = JSON.parse(data.deltaData); // get the data for the second chart
                      comp.createVue();
                   });
                 },
